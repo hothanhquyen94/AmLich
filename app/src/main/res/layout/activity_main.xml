@@ -2,21 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#9ad2ca"
+    android:background="#000000"
     android:orientation="vertical" >
 
     <LinearLayout android:id="@+id/buttonlayout"
         android:layout_width="fill_parent"
         android:layout_height="60sp"
-        android:background="#389ac7"
+
         android:gravity="left|top"
         android:height="60sp"
         android:orientation="horizontal" >
 
-        <Button android:id="@+id/settings"
-            android:layout_width="54sp"
-            android:layout_height="60sp"
-            android:background="@drawable/menu" />
+
 
         <ImageView
             android:id="@+id/prevMonth"
@@ -43,19 +40,15 @@
             android:layout_marginRight="10sp"
             android:src="@drawable/forward" >
         </ImageView>
-        <Button android:id="@+id/addEvent"
-            android:layout_width="54sp"
-            android:layout_height="60sp"
-            android:background="@drawable/plus" />
+
     </LinearLayout>
     <Button
         android:id="@+id/selectedDayMonthYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#339184"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#FFFFFF" >
+        android:textColor="#000000" >
     </Button>
     <TableRow
         android:id="@+id/tableRow1"
