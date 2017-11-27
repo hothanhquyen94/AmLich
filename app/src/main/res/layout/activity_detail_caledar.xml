@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Âm lịch"
+        android:gravity="center"
+        android:textSize="18dip"
+        android:textColor="#ffffff" >
+    </TextView>
+    <LinearLayout android:id="@+id/buttonlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="60sp"
+        android:gravity="left|top"
+        android:height="60sp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/prevDay"
+            android:layout_width="20sp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"
+            android:src="@drawable/backs" >
+        </ImageView>
+
+        <TextView android:id="@+id/currentDayOfWeek"
+            android:layout_width="fill_parent"
+            android:layout_height="60sp"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:text="Thứ 5"
+            android:textColor="#FFFFFF" >
+        </TextView>
+
+        <ImageView android:id="@+id/nextDay"
+            android:layout_width="20sp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginRight="10sp"
+            android:src="@drawable/forward" >
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+        <TextView
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ff0900"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="12"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_weight="8"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/txtMonthAndYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Tháng 8 năm 2014"
+                    android:gravity="center"
+                    android:textSize="30sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5">
+                <TextView
+                    android:id="@+id/txtDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="14"
+                    android:textSize="140sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:padding="5dp"
+                android:weightSum="2"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txtTucNgu"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Nuoi lon an com "
+                    android:layout_marginRight="20dp"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/tucngu"
+                    android:layout_marginRight="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtInforDateLuna"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="Nuoi lon an com "
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:layout_gravity="bottom"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_height="1dp"
+            android:background="#ff0900"/>
+        <LinearLayout
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:weightSum="3"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/TextView06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:text="Ngày"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/TextView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:text="Tháng"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/TextView04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"
+                        android:text="Năm"
+                        android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="2"
+                android:weightSum="3"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/txtDayLuna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:text="17"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/txtMonthLuna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:text="8"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/txtYearLuna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:layout_gravity="center"
+                        android:text="2017"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:weightSum="3"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/txtNameDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:text="Ngày"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/txtNameMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="23sp"
+                    android:text="Tháng"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/txtNameYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="23sp"
+                    android:layout_gravity="center"
+                    android:text="Năm"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
