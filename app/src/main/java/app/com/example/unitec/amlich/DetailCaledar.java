@@ -3,22 +3,35 @@ package app.com.example.unitec.amlich;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetailCaledar extends AppCompatActivity {
+import java.util.Calendar;
+
+import static app.com.example.unitec.amlich.GridCellAdapter.getIdMonthAsString;
+
+public class DetailCaledar extends AppCompatActivity implements View.OnClickListener,getPositionCurrent{
     private TextView currentDayOfWeek;
     private TextView txtMonthAndYear;
-    private TextView txtDay,txtTucNgu,txtInforDateLuna,txtDayLuna,txtMonthLuna,txtYearLuna,txtNameDay,txtNameMonth,txtNameYear;
+    private TextView txtDay,txtTucNgu,txtInforDateLuna,
+            txtDayLuna,txtMonthLuna,txtYearLuna,
+            txtNameDay,txtNameMonth,txtNameYear;
+    private VietCaledar viewDate;
+    private ImageView imgNextDay,imgPreDay;
+    private int positionCurrent;
+    private GridCellAdapter adapter;
+    private int month,day, year;
+    private int size;
+    private boolean check = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_caledar);
-        inits();
-
-    }
-
-    public void inits(){
+        imgNextDay = (ImageView)findViewById(R.id.nextDay);
+        imgPreDay = (ImageView)findViewById(R.id.prevDay);
         currentDayOfWeek = (TextView)findViewById(R.id.currentDayOfWeek);
         txtMonthAndYear = (TextView)findViewById(R.id.txtMonthAndYear);
         txtDay = (TextView)findViewById(R.id.txtDay);
@@ -31,24 +44,120 @@ public class DetailCaledar extends AppCompatActivity {
         txtNameYear = (TextView)findViewById(R.id.txtNameYear);
         txtNameMonth = (TextView)findViewById(R.id.txtNameMonth);
         Intent intent = getIntent();
-        VietCaledar viewDate = (VietCaledar)intent.getSerializableExtra(Intent.EXTRA_TEXT);
+        viewDate = (VietCaledar)intent.getSerializableExtra(Intent.EXTRA_TEXT);
+        positionCurrent = viewDate.getPosition();
+        month = viewDate.getMonthSolar();
+        year = viewDate.getYearSolar();
+        day = viewDate.getDaySolar();
+        adapter = new GridCellAdapter(getApplicationContext(), month, year,this);
+        adapter.notifyDataSetChanged();
+        size = GridCellAdapter.list.size();
+        Log.d("quyenaa",size+" "+day);
+        inits(positionCurrent);
+        imgNextDay.setOnClickListener(this);
+        imgPreDay.setOnClickListener(this);
+        //adapter = new GridCellAdapter(getApplicationContext(), month, year,this);
+        //adapter.notifyDataSetChanged();
 
-        currentDayOfWeek.setText(new String(getWeekDayAsString(viewDate.getPosition())));
-        String valueday = String.valueOf(viewDate.getDaySolar());
-        txtDay.setText(valueday);
-        String valuemonth = String.valueOf(viewDate.getMonthSolar());
-        String valueyear = String.valueOf(viewDate.getYearSolar());
+    }
 
-        txtMonthAndYear.setText("Tháng "+valuemonth+" năm "+valueyear);
-        Log.d("aaa",viewDate.getMonthSolar()+"  "+viewDate.getYearSolar());
+    private void setGridCellAdapterToDate(int month, int year) {
+        adapter = new GridCellAdapter(getApplicationContext(), month, year,this);
+        adapter.notifyDataSetChanged();
 
-        txtDayLuna.setText(""+viewDate.getDayLuna());
-        txtMonthLuna.setText(""+viewDate.getMonnthLuna());
-        txtYearLuna.setText(""+viewDate.getYearLuna());
+    }
+
+    public void preDay(){
+        if (positionCurrent == 0){
+
+            if(day==1){
+                if (month <= 1 ){
+                    month = 12;
+                    year--;
+
+                }else {
+                    month--;
+                }
+            }
+            setGridCellAdapterToDate(month,year);
+            positionCurrent = size-1;
+
+        }else {
+            positionCurrent--;
+        }
+        Log.d("ddd",positionCurrent+"");
+        inits(positionCurrent);
+    }
+
+    public void nextDay(){
+        if (positionCurrent == (size-1) ){
+            positionCurrent = 0;
+            if (month > 11) {
+                month = 1;
+                year++;
+
+            }else {
+                month++;
+            }
+            setGridCellAdapterToDate(month,year);
+
+        }else {
+            positionCurrent++;
+        }
+        Log.d("ddd",positionCurrent+"");
+        inits(positionCurrent);
+    }
+
+
+
+
+    public void inits(int position){
+        String[] selectedGridDate = GridCellAdapter.list
+                .get(position).split("-");
+        String theday = selectedGridDate[0];
+        String themonth = selectedGridDate[2];
+        String theyear = selectedGridDate[3];
+        int MonthToCovert = getIdMonthAsString(themonth);
+        int DayToCovert =   Integer.parseInt(theday);
+        int YearToCovert =  Integer.parseInt(theyear);
+
+        ChinaCalendar lunaDate = new ChinaCalendar(DayToCovert,MonthToCovert,YearToCovert);
+        int[] date = lunaDate.ConVertToLunar();
+
+
+        txtDay.setText(theday);
+        txtMonthAndYear.setText("Tháng "+MonthToCovert+" năm "+theyear);
+        String[] nameLuna = (new ChinaCalendar(
+                DayToCovert,
+                MonthToCovert,
+                YearToCovert)).
+                getNameLuna();
+        currentDayOfWeek.setText(getWeekDayAsString(position));
+        txtDayLuna.setText(""+date[0]);
+        txtMonthLuna.setText(""+date[1]);
+        txtYearLuna.setText(""+date[2]);
+        txtNameDay.setText(nameLuna[0]);
+        txtNameMonth.setText(nameLuna[1]);
+        txtNameYear.setText(nameLuna[2]);
     }
 
     private String getWeekDayAsString(int i) {
         int j = (i%7);
         return Util.weekdays[j];
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == imgNextDay) {
+            nextDay();
+        }
+        if (v == imgPreDay) {
+            preDay();
+        }
+    }
+
+    @Override
+    public void onReturn(int position) {
+
     }
 }

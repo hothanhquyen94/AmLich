@@ -14,6 +14,17 @@ public class VietCaledar implements Serializable {
     int monnthLuna;
     int yearLuna;
     int position;
+    String dayOFWeek;
+
+
+    public String getDayOFWeek() {
+        return dayOFWeek;
+    }
+
+    public void setDayOFWeek(String dayOFWeek) {
+        this.dayOFWeek = dayOFWeek;
+    }
+
     public int getDaySolar() {
         return daySolar;
     }
