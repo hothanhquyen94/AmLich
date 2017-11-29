@@ -183,7 +183,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void printDateLuna(int day,int month,int year){
         ChinaCalendar lunaDate = new ChinaCalendar(day,month,year);
         String[] nameLuna = lunaDate.getNameLuna();
-        displayInforDate.setText("Ngày "+nameLuna[0]+" tháng "+nameLuna[1]+" năm "+nameLuna[2]);
+        VietCaledar v = new VietCaledar();
+        v.setCanChiHour(nameLuna[0]);
+        displayInforDate.setText("Ngày "+nameLuna[0]+" tháng "+nameLuna[1]+" năm "+nameLuna[2]
+        +"\n\n"+ v.getCanChiHour());
+        Log.d("hoa",v.getCanChiHour()+"");
     }
 
     public void initFirstDisplay(){
@@ -213,6 +217,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ChinaCalendar lunaDate = new ChinaCalendar(DayToCovert,MonthToCovert,YearToCovert);
         int[] date = lunaDate.ConVertToLunar();
+        String[] nameDay = lunaDate.getNameLuna();
         VietCaledar viewDateLuna = new VietCaledar();
 
         viewDateLuna.setDaySolar(DayToCovert);
@@ -222,16 +227,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewDateLuna.setDayLuna(date[0]);
         viewDateLuna.setMonnthLuna(date[1]);
         viewDateLuna.setYearLuna(date[2]);
+
+        viewDateLuna.setCanChiHour(nameDay[0]);
         viewDateLuna.setPosition(vitri);
 
         return viewDateLuna;
 
     }
 
-
-
     @Override
     public void onReturn(int position) {
         positionViewCurrent = position;
     }
+
+
 }

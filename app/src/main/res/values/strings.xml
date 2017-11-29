@@ -1,4 +1,248 @@
 <resources>
     <string name="app_name">AmLich</string>
     <string name="tucngu"><i>Tục ngữ</i></string>
+
+    <string name="data">
+       - Ăn cây nào rào cây nấy.
+       - Ăn cỗ đi trước, lội nước theo sau.
+       - Ăn cơm có canh như tu hành có bạn.
+       - Ăn cơm không rau như nhà giàu chết không nhạc.
+       - Ăn cơm mới, nói chuyện cũ.
+       - Ăn cơm nhà vác tù và hàng tổng.
+       - Ăn đầu sóng, nói đầu gió.
+       - Ăn không lo của kho cũng hết.
+       - Ăn kĩ no lâu, cày sâu tốt lúa.
+       - Ăn quả nhớ kẻ trồng cây.
+       - Ăn khoai nhớ kẻ cho dây mà trồng.
+       - Ăn theo thuở, ở theo thời.
+       - Ăn trông nồi ngồi trông hướng.
+       - Ăn vóc học hay.
+       - Ăn chắc mặc bền.
+       - Ăn quả nhớ kẻ trồng cây; ăn gạo nhớ kẻ đâm,xay,giần,sàng.
+       - Ăn trái nhớ kẻ trồng cây.
+       - Uống nước nhớ người đào giếng.
+       - Ân trả nghĩa đền.
+       - Bạn bè con chấy cắn đôi.
+       - Bạn bè là nghĩa tương tri.
+       - Bán anh em xa, mua láng giềng gần.
+       - Bè ai người ấy chống.
+       - Bè thì bè lon, sào thì sào sậy.
+       - Bé đi câu, lớn đi hầu, già đi hỏi nợ.
+       - Bé người con nhà bác, lớn xác con nhà người.
+       - Bé người to con mắt.
+       - Buôn có bạn, bán có phường.
+       - Bụt chùa nhà không thiêng.
+       - Bắt con cá lóc nướng chui.
+       - Có chí thì nên.
+       - Cây có cội, nước có nguồn.
+       - Có công mài sắt, có ngày nên kim.
+       - Cái răng, cái tóc là gốc con người.
+       - Cái kim trong bọc cũng có ngày lòi ra.
+       - Con trâu là đầu cơ nghiệp.
+       - Cái khó ló cái khôn.
+       - Cần cù bù thông minh.
+       - Con dại cái mang.
+       - Con hơn cha là nhà có phúc.
+       - Cơm chẳng lành, canh chẳng ngọt.
+       - Con có cha như nhà có nóc, con không cha như nòng nọc đứt đuôi.
+       - Có cứng mới đứng đầu gió.
+       - Cọp chết để da, người ta chết để tiếng.
+       - Chó treo mèo đậy.
+       - Chơi dao có ngày đứt tay.
+       - Có công mài sắt có ngày nên kim.
+       - Cười người chẳng nghĩ đến thân, thử sờ lên gáy xem xa hay gần.
+       - Cho tôi chọn bạn tấm lòng thủy chung.
+       - Của một đồng công một nén.
+       - Chớ thấy sóng cả, mà ngã tay chèo.
+       - Cây ngay không sợ chết đứng.
+       - Chết vinh còn hơn sống nhục.
+       - Chết đứng còn hơn sống quỳ.
+       - Chân cứng đá mềm.
+       - Chân nam đá chân chiêu.
+       - Dao sắc không gọt được chuối.
+       - Dục tốc bất đạt.
+       - Da mồi tóc bạc.
+       - Dầu bông bưởi, dầu bông lài.
+       - Xức vô với Tết còn hoài mùi cứt trâu.
+       - Day qua bên trái gặp bảy mũi dùi.
+       - Day qua bên mặt gặp mười mũi giáo.
+       - Dạy con từ thuở còn thơ.
+       - Dạy vợ dạy thuở bơ vơ mới về.
+       - Dã tràng xe cát biển Đông.
+       - Nhọc nhằn mà chẳng nên công cán gì.
+       - Dốt đặc cán mai.
+       - Đang yên đang lành lại cắm mảnh sành vào đít.
+       - Đời cha ăn mặn đời con khát nước.
+       - Đói cho sạch, rách cho thơm.
+       - Đêm tháng năm chưa nằm đã sáng, ngày tháng mười chưa cười đã tối.
+       - Đâm bị thóc, chọc bị gạo.
+       - Đi thưa về gửi.
+       - Đi đến nơi về đến chốn.
+       - Đi một ngày đàng học một sàng khôn.
+       - Đi sớm về muộn.
+       - Đèn nhà ai nhà nấy rạng.
+       - Đèn nhà bên sáng,gà nhà ta thức.
+       - Đầu năm sương muối, cuối năm gió nồm.
+       - Đồng tiền đi liền khúc ruột .
+       - Đất có lề, quê có thói.
+       - Đi chơi mất chỗ đi ăn cỗ mất phần.
+       - Được mùa cau đau mùa lúa.
+       - Gái có chồng như Rồng có Vây, gái không chồng như Cối Xay không Ngõng.
+       - Gái có chồng như Gông đeo cổ, trai có vợ như rợ buộc chân.
+       - Gieo gió gặt bão.
+       - Góp gió thành bão.
+       - Gieo nhân nào , gặt quả nấy.
+       - Giấy rách phải giữ lấy lề.
+       - Gần mực thì đen, gần đèn thì sáng.
+       - Giận quá mất khôn.
+       - Gừng càng già càng cay.
+       - Ghét của nào trời trao của nấy
+       - Gạn đục, khơi trong.
+       - Giặc đến nhà đàn bà cũng đánh.
+       - Giỏ nhà ai quai nhà nấy.
+       - Giống rồng lại đẻ ra rồng.
+       - Gà què ăn quẩn cối xay.
+       - Gậy ông đập lưng ông.
+       - Khôn ăn cái, dại ăn nước.
+       - Khôn đâu tới trẻ, khỏe đâu tới già.
+       - Khôn không qua lẽ, khỏe chẳng qua lời.
+       - Khôn nhà dại chợ.
+       - Khéo ăn thì no, khéo co thì ấm.
+       - Không làm sao nên.
+       - Kính già, già để tuổi cho.
+       - Kính lão đắc thọ.
+       - Kính trên nhường dưới.
+       - Khi yêu trái ấu cũng tròn, ghét nhau bồ hòn cũng méo.
+       - Không có lửa làm sao có khói.
+       - Kẻ cắp gặp bà già.
+       - Không thầy đố mày làm nên.
+       - Kính thầy yêu bạn.
+       - Khỏi vòng cong đuôi.
+       - Kiến tha lâu cũng đầy tổ.
+       - Kiến đen tha trứng lên cao, thế nào cũng có mưa rào rất to.
+       - Khăng khăng quân tử một lời nhất ngôn.
+       - Lá rụng về cội.
+       - Lá lành đùm lá rách.
+       - Lên thác xuống ghềnh
+       - Liệu cơm gắp mắm.
+       - Lùi một bước tiến ngàn dặm.
+       - Lửa gần rơm lâu ngày cũng bén.
+       - Lù đù vác cái lu mà chạy.
+       - Lửa thử vàng gian nan thử sức.
+       - Lựa gió xoay chiều.
+       - Lắm kẻ yêu hơn nhiều người ghét.
+       - Lấy oán báo oán, oán nợ chất chồng.
+       - Lấy đức báo oán, oán tự khắc giải.
+       - Muôn người như một ăn cột mà ra.
+       - Một điều nhịn chín điều lành.
+       - Một giọt máu đào hơn ao nước lã.
+       - Môi hở, răng lạnh.
+       - Một con ngựa đau, cả tàu bỏ cỏ.
+       - Một con chim én không làm nên mùa xuân.
+       - Một câu nhịn, chín câu lành.
+       - Mất lòng trước, được lòng sau.
+       - Một nụ cười bằng mười thang thuốc bổ.
+       - Mật ngọt chết ruồi.
+       - Mạnh vì gạo, bạo vì tiền.
+       - Miếng ngon nhớ lâu, đòn đau nhớ đời.
+       - Một miếng khi đói bằng một gói khi no.
+       - Muốn ăn thì lăn vào bếp.
+       - Muốn lành nghề, chớ nề học hỏi.
+       - Muốn biết phải hỏi, muốn giỏi phải học.
+       - Một kho vàng không bằng một nang chữ.
+       - Một mặt người bằng mười mặt của.
+       - Mau sao thì nắng, vắng sao thì mưa.
+       - Mềm nắn, rắn buông.
+       - Mềm quá thì yếu, cứng quá thì gãy.
+       - Mèo nhỏ bắt chuột con.
+       - Mía ngọt đánh cả cụm.
+       - Một người lo bằng kho người làm.
+       - Một thằng tính bằng chín thằng làm.
+       - Một lần ngại tốn, bốn lần chẳng xong.
+       - Một chữ cũng là thầy, nửa chữ cũng là thầy.
+       - Một nghề cho chín còn hơn chín nghề.
+       - Mũi dại, lái phải chịu đòn.
+       - Muốn ăn cá cả phải thả câu dài.
+       - Mưu sự tại nhân hành sự tại thiên.
+       - Mẹ hát, con khen hay.
+       - Mưa thuận gió hòa.
+       - Năng làm thì nên.
+       - Nước chảy về nguồn, lá rụng về cội.
+       - Nước lã không khuấy nên hồ.
+       - Nước lã mà vã nên hồ.
+       - Nước đến chân mới nhảy.
+       - Tay không làm nổi cơ đồ mới ngoan.
+       - Nước chảy đá mòn.
+       - Nói có sách, mách có chứng.
+       - Nói lời phải giữ lấy lời.
+       - No mất ngon, giận mất khôn.
+       - No bụng đói con mắt.
+       - Năng nhặt chặt bị.
+       - Nó lú có chú nó khôn.
+       - Nói thì hay, bắt tay thì dở.
+       - Nước chảy, hoa trôi, bèo dạt.
+       - Nuôi lợn ăn cơm nằm, nuôi tằm ăn cơm đứng.
+       - Nước lã mà vã nên hồ, tay không mà nổi cơ đồ mới ngoan.
+       - Nói hay hơn hay nói.
+       - Nói người phải nghĩ đến ta, sờ vào sau gáy xem xa hay gần.
+       - Nói người phải nghĩ đến thân, sờ vào sau gáy xem gần hay xa.
+       - Nam thực như hổ, nữ thực như miêu.
+       - Nôm na là cha mánh khóe.
+       - Nhà sạch thì mát, bát sạch ngon cơm.
+       - Nhà giàu đứt tay bằng ăn mày đổ ruột.
+       - Nhất thì, nhì thục.
+       - Nhất nước, nhì phân, tam cần, tứ giống.
+       - Nhất canh trì, nhị canh viên, tam canh điền.
+       - Nhất quỷ nhì ma, thứ ba học trò.
+       - Nhân chi sơ tính bổn thiện.
+       - Những người cặp mắt lá răm, đôi mày lá liễu đáng trăm quan tiền.
+       - Nhìn bụng ta, suy ra bụng người.
+       - Nhất tự vi sư, bán tự vi sư.
+       - Nhường cơm sẻ áo.
+       - Nhất cận thị, nhị cận giang.
+       - Người sống đống vàng.
+       - Nghèo sinh bệnh, giàu sinh tật.
+       - Người đẹp vì lụa, lúa tốt vì phân.
+       - Ngưu tầm ngưu, mã tầm mã.
+       - Ngồi mát ăn bát vàng.
+       - Ngọt như mía lùi.
+       - Ngọt mật chết ruồi.
+       - Người ta là hoa là đất.
+       - Nói Sơn Tây chết cây Hà Nội.
+       - Oán không giải được oán.
+       - Oan có đầu, nợ có chủ.
+       - Oan oan tương báo , dỉ hận liên miên.
+       - Oán thù nên giải không nên kết.
+       - Oan gia ngõ hẹp.
+       - Ông thò chân giò, bà thò nậm rượu.
+       - Ông ăn nem bà ăn chả.
+       - Ở hiền gặp lành, ở ác gặp ác.
+       - Ở nhà nghe Đông Hà lúa héo.
+       - Ở bầu thì tròn, ở ống thì dài.
+       - Ở xó chuồng heo,hơn là theo phía vợ.
+       - Phép vua thua lệ làng.
+       - Phòng bệnh hơn chữa bệnh.
+       - Phúc bất trùng lai, hoạ vô đơn chí.
+       - Phú quý sinh lễ nghĩa.
+       - Quân tử phòng thân; tiểu nhân phòng bị, gậy.
+       - Quân tử nhất ngôn kí xuất, tứ mã nan truy
+       - Quỷ tha, ma bắt.
+       - Quả báo nhãn tiền.
+       - Quan nhất thời, dân vạn đại.
+       - Quýt làm cam chịu.
+       - Qua cầu rút ván.
+       - Quân tử trả thù mười năm chưa muộn.
+       - Yêu nhau lắm, cắn nhau đau.
+       - Yêu nhau cau sáu bổ ba, ghét nhau cau sáu bổ ra làm mười.
+       - Yêu trẻ, trẻ đến nhà; kính già, già để tuổi cho.
+       - Yêu nhau yêu cả đường đi, ghét nhau ghét cả tông chi họ hàng.
+       - Yêu nhau vạn sự chẳng hề, dẫu trăm chỗ lệch cũng kê cho bằng.
+       - Yêu nhau xa cũng nên gần, ghét nhau cách một bàn chân cũng lìa.
+    </string>
+
+
+
+
+
+
 </resources>

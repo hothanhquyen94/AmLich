@@ -95,15 +95,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="19dip"
         android:text="Ăn trong nồi ngồi trong lứa"
-        android:textColor="#ffff"/>
+        android:textColor="#ffff"
+        android:textSize="16dip" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="19dip"
+        android:textSize="16dip"
         android:textStyle="italic"
         android:text="Tục ngữ"
         android:textColor="#ffff"/>
@@ -117,7 +118,7 @@
         android:gravity="center"
         android:text="Ăn trong nồi ngồi trong lứa"
         android:textColor="#ffff"
-        android:textSize="19dip" />
+        android:textSize="16dip" />
 
     <TextView
         android:id="@+id/textView"

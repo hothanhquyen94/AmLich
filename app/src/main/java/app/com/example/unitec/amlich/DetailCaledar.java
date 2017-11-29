@@ -1,6 +1,7 @@
 package app.com.example.unitec.amlich;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -8,8 +9,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Random;
 
 import static app.com.example.unitec.amlich.GridCellAdapter.getIdMonthAsString;
 
@@ -25,7 +40,8 @@ public class DetailCaledar extends AppCompatActivity implements View.OnClickList
     private GridCellAdapter adapter;
     private int month,day, year;
     private int size;
-    private boolean check = false;
+    private InputStream inputStream ;
+    private String[] dulieu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +59,7 @@ public class DetailCaledar extends AppCompatActivity implements View.OnClickList
         txtNameDay = (TextView)findViewById(R.id.txtNameDay);
         txtNameYear = (TextView)findViewById(R.id.txtNameYear);
         txtNameMonth = (TextView)findViewById(R.id.txtNameMonth);
+
         Intent intent = getIntent();
         viewDate = (VietCaledar)intent.getSerializableExtra(Intent.EXTRA_TEXT);
         positionCurrent = viewDate.getPosition();
@@ -52,12 +69,17 @@ public class DetailCaledar extends AppCompatActivity implements View.OnClickList
         adapter = new GridCellAdapter(getApplicationContext(), month, year,this);
         adapter.notifyDataSetChanged();
         size = GridCellAdapter.list.size();
-        Log.d("quyenaa",size+" "+day);
+
+        //readData();
+        String ten = (getApplication().getResources().getString(R.string.data));
+        dulieu = ten.split("-");
+        Log.d("qưert",dulieu[1]+"");
+
         inits(positionCurrent);
         imgNextDay.setOnClickListener(this);
         imgPreDay.setOnClickListener(this);
-        //adapter = new GridCellAdapter(getApplicationContext(), month, year,this);
-        //adapter.notifyDataSetChanged();
+        adapter = new GridCellAdapter(getApplicationContext(), month, year,this);
+        adapter.notifyDataSetChanged();
 
     }
 
@@ -79,32 +101,32 @@ public class DetailCaledar extends AppCompatActivity implements View.OnClickList
                     month--;
                 }
             }
-            setGridCellAdapterToDate(month,year);
             positionCurrent = size-1;
+            setGridCellAdapterToDate(month,year);
 
         }else {
             positionCurrent--;
         }
-        Log.d("ddd",positionCurrent+"");
         inits(positionCurrent);
     }
 
     public void nextDay(){
         if (positionCurrent == (size-1) ){
-            positionCurrent = 0;
-            if (month > 11) {
-                month = 1;
-                year++;
+            if (day == 29 || day == 30 || day == 31){
+                if (month > 11) {
+                    month = 1;
+                    year++;
 
-            }else {
-                month++;
+                }else {
+                    month++;
+                }
             }
+            positionCurrent = 0;
             setGridCellAdapterToDate(month,year);
 
-        }else {
+        } else {
             positionCurrent++;
         }
-        Log.d("ddd",positionCurrent+"");
         inits(positionCurrent);
     }
 
@@ -123,15 +145,12 @@ public class DetailCaledar extends AppCompatActivity implements View.OnClickList
 
         ChinaCalendar lunaDate = new ChinaCalendar(DayToCovert,MonthToCovert,YearToCovert);
         int[] date = lunaDate.ConVertToLunar();
-
+        VietCaledar v = new VietCaledar();
 
         txtDay.setText(theday);
         txtMonthAndYear.setText("Tháng "+MonthToCovert+" năm "+theyear);
-        String[] nameLuna = (new ChinaCalendar(
-                DayToCovert,
-                MonthToCovert,
-                YearToCovert)).
-                getNameLuna();
+        String[] nameLuna = lunaDate.getNameLuna();
+        v.setCanChiHour(nameLuna[0]);
         currentDayOfWeek.setText(getWeekDayAsString(position));
         txtDayLuna.setText(""+date[0]);
         txtMonthLuna.setText(""+date[1]);
@@ -139,6 +158,11 @@ public class DetailCaledar extends AppCompatActivity implements View.OnClickList
         txtNameDay.setText(nameLuna[0]);
         txtNameMonth.setText(nameLuna[1]);
         txtNameYear.setText(nameLuna[2]);
+        txtInforDateLuna.setText(v.getCanChiHour().toString());
+
+         Random n = new Random();
+         int i = n.nextInt(dulieu.length)-1;
+         txtTucNgu.setText(dulieu[i]);
     }
 
     private String getWeekDayAsString(int i) {
@@ -158,6 +182,7 @@ public class DetailCaledar extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onReturn(int position) {
-
     }
+
+
 }
