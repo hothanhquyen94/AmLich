@@ -2,15 +2,19 @@ package app.com.example.unitec.amlich;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,16 +27,16 @@ import java.util.Locale;
 
 import static app.com.example.unitec.amlich.GridCellAdapter.getIdMonthAsString;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener,getPositionCurrent {
+public class MainActivity extends AppCompatActivity implements getPositionCurrent {
     private static final String tag = "MyCalendarActivity";
     private TextView currentMonth;
     private TextView txtMonth;
-    private ImageView prevMonth;
-    private ImageView nextMonth;
+
+    private TextView nextMonth;
     private GridView calendarView;
     private GridCellAdapter adapter;
     private Calendar _calendar;
-    private TextView displayInforDate;
+    private TextView displayInforDate,inforHourCanchi;
     private boolean checkChoose = false;
     private  String curentDateString;
     private String[] CurrentTime;
@@ -47,6 +51,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String dateTemplate = "M"; /** Called when the activity is first created. */
     private static final String yearTempalte = "yyyy"; /** Called when the activity is first created. */
     private static final String dayofWeek = "EEE";
+
+    private GestureDetector gestureDetector;
+    private int SWIPE_THRESHOLD = 100;
+    private int SWIPE_VELOCITY_THRESHOLD = 100;
+    private LinearLayout geniruteLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,14 +65,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         month = _calendar.get(Calendar.MONTH)+1;
         year = _calendar.get(Calendar.YEAR);
 
-        prevMonth = (ImageView) this.findViewById(R.id.prevMonth);
-        prevMonth.setOnClickListener(this);
+        inforHourCanchi = (TextView)findViewById(R.id.inforHourCanchi);
         displayInforDate = (TextView)findViewById(R.id.display_luna_date);
         currentMonth =(TextView) this.findViewById(R.id.currentMonth);
 
-        nextMonth = (ImageView) this.findViewById(R.id.nextMonth);
-        nextMonth.setOnClickListener(this);
+        nextMonth = (TextView) this.findViewById(R.id.nextMonth);
+        nextMonth.setTextColor(Color.GRAY);
+
+
         calendarView = (GridView) this.findViewById(R.id.calendar);
+
+        geniruteLayout = (LinearLayout)findViewById(R.id.geniruteLayout);
         adapter = new GridCellAdapter(getApplicationContext(), month, year,this);
         adapter.notifyDataSetChanged();
         calendarView.setAdapter(adapter);
@@ -97,6 +109,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+
+
+
         ImageButton cal_Amlich = (ImageButton)findViewById(R.id.btnViewAmLich);
         cal_Amlich.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,27 +124,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     viewChoice = chooseDate(positionView);
                 }else {
                     viewChoice=chooseDate(positionViewCurrent);
-                 // ChinaCalendar lunaDate = new ChinaCalendar(CurrentDateInt[0],CurrentDateInt[1],CurrentDateInt[2]);
-                 // int[] date = lunaDate.ConVertToLunar();
-
-                 // viewChoice.setDaySolar(CurrentDateInt[0]);
-                 // viewChoice.setMonthSolar(CurrentDateInt[1]);
-                 // viewChoice.setYearSolar(CurrentDateInt[2]);
-
-                 // viewChoice.setDayLuna(date[0]);
-                 // viewChoice.setMonnthLuna(date[1]);
-                 // viewChoice.setYearLuna(date[2]);
-
-                 // String dayOfWeek = (String) DateFormat.format(dayofWeek, _calendar.getTime());
-                 // viewChoice.setDayOFWeek(dayOfWeek);
-                 //// String dayOfWeek =
-                 ////int currentWeekDay = cal.get(Calendar.DAY_OF_WEEK)-1;
-                 ////trailingSpaces = currentWeekDay;
-                 ////Log.d(tag, "Week Day:" + currentWeekDay + " is " + getWeekDayAsString(currentWeekDay));
 
                 }
                 intent.putExtra(Intent.EXTRA_TEXT, viewChoice);
                 startActivity(intent);
+            }
+        });
+
+
+
+        gestureDetector = new GestureDetector(this,new MyGesture());
+        geniruteLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                gestureDetector.onTouchEvent(event);
+                return true;
             }
         });
     }
@@ -139,6 +148,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         _calendar.set(year, month - 1, _calendar.get(Calendar.DAY_OF_MONTH));
         currentMonth.setText("Tháng " +DateFormat.format(dateTemplate,
                 _calendar.getTime()));
+
+
         adapter.notifyDataSetChanged();
         calendarView.setAdapter(adapter);
 
@@ -164,15 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setGridCellAdapterToDate(month, year);
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v == prevMonth) {
-            nextMonthView();
-        }
-        if (v == nextMonth) {
-            prevMonthView();
-        }
-    }
+
 
     @Override public void onDestroy() {
         super.onDestroy();
@@ -185,13 +188,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String[] nameLuna = lunaDate.getNameLuna();
         VietCaledar v = new VietCaledar();
         v.setCanChiHour(nameLuna[0]);
-        displayInforDate.setText("Ngày "+nameLuna[0]+" tháng "+nameLuna[1]+" năm "+nameLuna[2]
-        +"\n\n"+ v.getCanChiHour());
+        displayInforDate.setText("Ngày "+nameLuna[0]+" tháng "+nameLuna[1]+" năm "+nameLuna[2]);
+        inforHourCanchi.setText(v.getCanChiHour());
         Log.d("hoa",v.getCanChiHour()+"");
     }
 
     public void initFirstDisplay(){
         currentMonth.setText("Tháng "+DateFormat.format(dateTemplate, _calendar.getTime()));
+
+
         txtMonth.setText(DateFormat.format(yearTempalte, _calendar.getTime()));
         java.text.DateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         curentDateString = df.format(_calendar.getTime());
@@ -240,5 +245,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         positionViewCurrent = position;
     }
 
+    class MyGesture extends GestureDetector.SimpleOnGestureListener{
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
 
+            if (e2.getX()-e1.getX()>SWIPE_THRESHOLD && Math.abs(velocityX)>SWIPE_VELOCITY_THRESHOLD){
+                nextMonthView();
+
+            }
+            if (e1.getX()-e2.getX()>SWIPE_THRESHOLD && Math.abs(velocityX)>SWIPE_VELOCITY_THRESHOLD){
+                prevMonthView();
+            }
+
+            return super.onFling(e1, e2, velocityX, velocityY);
+        }
+    }
 }

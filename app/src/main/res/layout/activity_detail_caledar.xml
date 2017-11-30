@@ -40,7 +40,9 @@
             android:gravity="center"
             android:text="Thứ năm"
             android:textColor="#FFFFFF"
-            android:textSize="45sp"></TextView>
+            android:textSize="45sp">
+
+        </TextView>
 
         <ImageView android:id="@+id/nextDay"
             android:layout_width="20sp"
@@ -63,238 +65,261 @@
         android:background="#ff0000"
         android:padding="2dp" />
 
-
-    <TextView
-        android:id="@+id/txtMonthAndYear"
-        android:layout_width="fill_parent"
-        android:layout_height="35sp"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="Tháng 8 năm 2014"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp" />
-
     <LinearLayout
+        android:weightSum="4"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/txtDay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="160sp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:text="14"
-            android:textStyle="bold"
-            android:textColor="#ffff"/>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/txtTucNgu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Ăn trong nồi ngồi trong lứa"
-        android:textColor="#ffff"
-        android:textSize="16dip" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="16dip"
-        android:textStyle="italic"
-        android:text="Tục ngữ"
-        android:textColor="#ffff"/>
-
-    <TextView
-        android:id="@+id/txtInforDateLuna"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="Ăn trong nồi ngồi trong lứa"
-        android:textColor="#ffff"
-        android:textSize="16dip" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#ff0000"
-        android:padding="2dp" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical">
-        <LinearLayout
-
-            android:weightSum="3"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_gravity="center"
-                android:id="@+id/TextView06"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="19dip"
-                android:text="Ngày"
-                android:textColor="#ffffff" />
-
-            <TextView
-                android:layout_gravity="center"
-                android:id="@+id/TextView05"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="19dip"
-                android:text="Tháng"
-                android:textColor="#ffffff" />
-
-            <TextView
-                android:id="@+id/TextView04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="19dip"
-                android:layout_gravity="center"
-                android:text="Năm"
-                android:textColor="#ffffff" />
-
-        </LinearLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
-
-            android:weightSum="3"
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:id="@+id/genirute"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtMonthAndYear"
+                android:layout_width="fill_parent"
+                android:layout_height="35sp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Tháng 8 năm 2014"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
             <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
                 <TextView
-                    android:layout_gravity="center"
-                    android:id="@+id/txtDayLuna"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:id="@+id/txtDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="160sp"
+                    android:padding="-5dp"
                     android:gravity="center"
-                    android:textSize="25sp"
-                    android:text="17"
-                    android:textColor="#ffffff" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
                     android:layout_gravity="center"
-                    android:id="@+id/txtMonthLuna"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="25sp"
-                    android:text="8"
-                    android:textColor="#ffffff" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/txtYearLuna"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-
-                    android:gravity="center"
-                    android:textSize="25sp"
-                    android:layout_gravity="center"
-                    android:text="2017"
-                    android:textColor="#ffffff" />
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:weightSum="3"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_gravity="center"
-                    android:id="@+id/txtNameDay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
+                    android:text="14"
                     android:textStyle="bold"
-                    android:textSize="18dip"
+                    android:textColor="#ffff"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtTucNgu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Ăn trong nồi ngồi trong lứa"
+                android:textColor="#ffff"
+                android:textSize="16dip" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="16dip"
+                android:textStyle="italic"
+                android:text="Tục ngữ"
+                android:textColor="#ffff"/>
+
+            <TextView
+                android:id="@+id/txtInforDateLuna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="Ăn trong nồi ngồi trong lứa"
+                android:textColor="#ffff"
+                android:textSize="15dip" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="-3dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#ff0000"
+                android:padding="2dp" />
+            <LinearLayout
+
+                android:weightSum="3"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/TextView06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="19dip"
                     android:text="Ngày"
                     android:textColor="#ffffff" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_gravity="center"
-                    android:id="@+id/txtNameMonth"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="18dip"
-                    android:text="Tháng"
-                    android:textStyle="bold"
-                    android:textColor="#ffffff" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/txtNameYear"
+                    android:layout_gravity="center"
+                    android:id="@+id/TextView05"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:textSize="18dip"
-                    android:textStyle="bold"
+                    android:textSize="19dip"
+                    android:text="Tháng"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/TextView04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="19dip"
                     android:layout_gravity="center"
                     android:text="Năm"
                     android:textColor="#ffffff" />
+
             </LinearLayout>
 
+            <LinearLayout
+
+                android:weightSum="3"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/txtDayLuna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:text="17"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/txtMonthLuna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:text="8"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/txtYearLuna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:text="2017"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:weightSum="3"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/txtNameDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="18dip"
+                        android:text="Ngày"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/txtNameMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18dip"
+                        android:text="Tháng"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txtNameYear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18dip"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:text="Năm"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
 
 
 
+
+
+            </LinearLayout>
 
         </LinearLayout>
-
     </LinearLayout>
+
 
 
 
